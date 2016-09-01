@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by tungb on 9/1/2016.
  */
 public class Input {
-    //list REGEX
+
     /*
     *   Phone start with 0 => "0"
     *   after 0 is 9->10 number => \\d{9,10}
@@ -33,15 +33,15 @@ public class Input {
     *   name start with not number, can has '.'( or '-','@',...), like: a-team.co, STu.ptit, sp.us-uk, name,...
     *   name: [_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*
     *   domain start with a name (not start with _) : [A-Za-z0-9-]+
-    *   and >= 1 group start with '.' like: .com, .abc.zxy, .ptit.edu => (\\.[A-Za-z0-9-]+)*
+    *   and >= 0 group start with '.' like: .com, .abc.zxy, .ptit.edu => (\\.[A-Za-z0-9-]+)*
     *   end of domain is a group like: .vn, .org,... => (\\.[A-Za-z]{2,})  //{2,} because it has at least 2 character
     */
     private static final String EMAIL_REGEX = "^" +
             "[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*" +
             "@" +
             "[A-Za-z0-9-]+" +
-            "(\\.[A-Za-z0-9-]+)*" +
-            "(\\.[A-Za-z]{2,})" +
+            "(.[A-Za-z0-9-]+)*" +
+            "(.[A-Za-z]{2,})" +
             "$";
 
     /*
